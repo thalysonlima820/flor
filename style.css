@@ -985,4 +985,40 @@ body {
   animation-play-state: paused !important;
 }
 
-/*# sourceMappingURL=style.css.map */
+.assinatura {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  color: white;
+  opacity: 0;
+  animation: fadeInAssinatura 1s ease forwards;
+  animation-delay: 2s;
+  z-index: 10;
+}
+
+.assinatura .numero {
+  font-size: 2rem;
+  opacity: 0.5;
+  margin-bottom: 4px;
+  color: #89c4f4;
+  animation: pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes fadeInAssinatura {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  to {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
