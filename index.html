@@ -617,15 +617,20 @@
         <h1>Rayssa Fernanda Amaral Rocha</h1>
     </div>
 
-
+    <video id="musica" loop style="display: none;">
+        <source src="aqui.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+    </video>
     <script>
         onload = () => {
-            const c = setTimeout(() => {
-                document.body.classList.remove("not-loaded");
-                clearTimeout(c);
-            }, 1000);
+          const c = setTimeout(() => {
+            document.body.classList.remove("not-loaded");
+            document.getElementById("musica").play();
+            clearTimeout(c);
+          }, 1000); // espera a flor desabrochar antes de tocar o som
         };
-    </script>
+      </script>
+      
 </body>
 
 </html>
