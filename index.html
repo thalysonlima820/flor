@@ -612,14 +612,31 @@
         <h1>Rayssa Fernanda</h1>
     </div>
 
+    <audio id="musica" src="./musica.mp3" loop></audio>
+
     <script>
-        onload = () => {
-            const c = setTimeout(() => {
-                document.body.classList.remove("not-loaded");
-                clearTimeout(c);
-            }, 1000);
-        };
+      onload = () => {
+        const c = setTimeout(() => {
+          document.body.classList.remove("not-loaded");
+          const musica = document.getElementById("musica");
+    
+          const playPromise = musica.play();
+    
+          if (playPromise !== undefined) {
+            playPromise
+              .then(() => {
+                console.log("Música tocando");
+              })
+              .catch((error) => {
+                console.warn("Autoplay bloqueado. Interação do usuário pode ser necessária.");
+              });
+          }
+    
+          clearTimeout(c);
+        }, 1000);
+      };
     </script>
+    
 </body>
 
 </html>
